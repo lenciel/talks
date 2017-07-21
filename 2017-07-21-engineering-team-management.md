@@ -1,3 +1,5 @@
+![Infra in HCB](https://github.com/lenciel/talks/blob/master/cloud_native%20copy.png) 
+
 如果我们问一个软件工程师，“你为什么在这个公司上班”，很多人的切入点是文化。当你跟朋友描述你的工作环境时，你可能首先描述的也是“文化”方面的。
 
 文化可以是一个公司最大的财富，也可以是最大的问题。但它究竟是什么？
