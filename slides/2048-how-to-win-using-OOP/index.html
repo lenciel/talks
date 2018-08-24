@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>2048</title>
+
+    <meta name="description" content="Thoughts&Rants After QCon">
+    <meta name="author" content="Luis Ibanez">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../revealjs341/css/reveal.css">
+    <link rel="stylesheet" href="../../revealjs341/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../custom_css/style.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../../revealjs341/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="../../revealjs341/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2 style="color:#42affa">比赛分享</h2>
+          <p>thoughts, rants and love stories</p>
+          <a href="#" class="image">
+            <img height="300px" src="images/board_2048.png" alt="2048 board">
+          </a>
+          <p>
+            <small>Created by <a href="mailto:lihao@testbird.com">Lenciel</a> &nbsp;&nbsp; 2016/01/17</small>
+          </p>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">Agenda</h3>
+          <ul>
+            <li>"Who Am I?"</li>
+            <li>"How I Win With Luck?"</li>
+            <li style="color:#96D35F">"And The Love Stories..."</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">Who Am I？</h3>
+          <ul>
+            <li><i style="font-size:60px;color:#ff0000">L</i>enciel or <i style="font-size:60px;color:#ff0000">H</i>ouse - 李昊</li>
+            <li><i style="font-size:60px;color:#ff0000">S</i>oftware Engineer</li>
+            <li><i style="font-size:60px;color:#ff0000">O</i>SS Participator</li>
+            <li><i style="font-size:60px;color:#ff0000">T</i>estBird VP of Engineering</li>
+          </ul>
+          <img height="250px" src="images/wu_kong.png" alt="avatar" style="margin: 15px;">
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">How I Win With Luck?</h3>
+          <img height="100%" src="images/lucky.gif" alt="lucky" style="margin: 15px;">
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">学习规则</h3>
+          <h5 style="color:#42affa">- 和"原始版本"<span style="color:orange">的区别</span></h5>
+          <ul>
+            <li>初始化的时候，board上有3个tile（均为2）<span style="color:greenyellow">原来是2个</span></li>
+            <li>电脑生成的2/4 tile是1:1的概率 <span style="color:greenyellow">原来是9:1的概率</span></li>
+            <li>每次移动，merge在某一行/列只能发生一次 ，slide仍然是递归的 <span style="color:greenyellow">原来merge/slide都是递归的</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <a href="#" class="image">
+            <img width="100%" src="images/not_silver_bullet.png" alt="wtf">
+          </a>
+          <blockquote style="color:#96D35F">
+            Hmm...I've done sth like this before...
+          </blockquote>
+        </section>
+
+        <section>
+          <a href="#" class="image">
+            <img width="100%" src="images/hope.jpeg" alt="hope">
+          </a>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">Submission #1</h3>
+          <ul>
+            <li>基本规则实现基于<a href="https://github.com/bfontaine/term2048">term2048</a>修改</li>
+            <li>大概看了一下StackOverflow上的那个<a href="http://stackoverflow.com/questions/22342854/what-is-the-optimal-algorithm-for-the-game-2048">讨论</a></li>
+            <li>实现了一个最"拟人"的评估函数 <span style="color:greenyellow">只看S形单调性</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">Rank No.1 (10240)</h3>
+          <a href="#" class="image">
+            <img height="300px" src="images/round_1.gif" alt="round1">
+          </a>
+        </section>
+
+        <section data-background="images/not_fair.gif">
+          <p style="margin-bottom:20%;margin-right:70%;background:#000000">被别人超过了啊<i style="font-size:80px;color:greenyellow">怎么办?</i></p>
+        </section>
+
+        <section data-transition="slide">
+          <h3 style="color:#42affa">可以做的优化</h3>
+          <ul><span style="color:#42affa">更深地搜索:</span>
+            <li class="fragment fade-out">多线程和多核的应用</li>
+            <li class="fragment highlight-current-blue">需要更高效率的棋盘模型和操作速度</li><br/><br/>
+            <span style="color:#42affa">更好地搜索:</span>
+            <li class="fragment fade-out">残局库和开局库</li>
+            <li class="fragment highlight-current-green">更好的搜索算法和启发式函数</li>
+            <li class="fragment highlight-current-blue">需要更高效率的棋盘模型和操作速度(不能剪枝)</li><br/><br/>
+          </ul>
+        </section>
+
+        <section data-transition="slide">
+          <a href="#" class="image">
+            <img width="100%" src="images/brother.jpeg" alt="hope">
+          </a>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">优化</h3>
+          <ul><span style="color:#42affa">更深地搜索:</span>
+            <li class="fragment highlight-current-blue">使用64bit的word表示棋盘</li>
+            <li class="fragment highlight-current-blue">创建transportation表</li><br/><br/>
+            <span style="color:#42affa">更好地搜索:</span>
+            <li class="fragment highlight-current-green">Expectimax搜索</li>
+            <li class="fragment highlight-current-green">考虑单调性/光滑度/剩余空格数/大数是否在角落/...</li>
+            <li class="fragment highlight-current-green">充分考虑1:1概率的2/4随机tile的惩罚</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">Rank No.1 Again</h3>
+          <a href="#" class="image">
+            <img height="300px" src="images/happy2.gif" alt="final">
+          </a>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="color:#42affa">Ada Lovelace</h3><br/>
+            <a href="#" class="image">
+              <img height="450px" src="images/bl.jpeg" alt="final">
+            </a>
+            <a href="#" class="image">
+              <img height="450px" src="images/ada_mother.jpeg" alt="final">
+            </a>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">Ada Lovelace</h3>
+
+            <a href="#" class="image">
+              <img width="640px" src="images/ada-lovelace-pictures-v2.jpg" alt="testing">
+            </a>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">Charles Babbage</h3>
+            <a href="#" class="image">
+              <img height="400px" width="100%" src="images/charles-babbage-portraits-v2.jpg" alt="testing">
+            </a>
+            <ul>
+              <li><span style="color:#42affa">Mother:</span> Don't be something like your father!</li>
+              <li><span style="color:orange">Ada:</span> Ah, why not!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">When Ada(18) meets Babbage(42)</h3>
+
+            <a href="#" class="image">
+              <img src="images/drawings-for-difference-engine-v2.png" alt="testing">
+            </a>
+            <ul>
+              <li><span style="color:#42affa">Babbage:</span> Look what I've done!</li>
+              <li><span style="color:orange">Ada:</span> Ah, this is the state of art!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">Ada: married, be a mother</h3>
+            <h4 style="color:orange">但心思已经在数学上</h4>
+
+            <a href="#" class="image">
+              <img height="400px" src="images/ada-lovelace-original-letters-v2.png" alt="testing">
+            </a>
+            <ul>
+              <li>师从Augustus de Morgan(1837)</li>
+              <li>身体不好又心情欠佳:数学暂停(1840)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 style="color:#E4EF65">Ada's Paper</h4>
+            <a href="#" class="image">
+              <img height="300px" src="images/menabrea-article-on-babbage-analytical-engine-v2.png" alt="testing">
+            </a>
+            <ul>
+              <li>Babbage在意大利演讲, Menabrea现场笔记(1840)</li>
+              <li>笔记用法语发表(1842), Ada进行翻译和批注(1843)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 style="color:#E4EF65">Ada & Babbage</h4>
+            <a href="#" class="image">
+              <img height="300px" src="images/ada-lovelace-debugging-letter-p2-v2.png" alt="testing">
+            </a>
+            <ul>
+              <li>Just like we do projects on Github</li>
+              <li>But msgs are carried by servants and She is in charge!</li>
+            </ul>
+          </section>
+          <section>
+            <h3 style="color:#42affa">Ada & Babbage</h3>
+            <a href="#" class="image">
+              <img height="300px" width="30%" src="images/ada-august-14-1843-letter-to-babbage-v2.png" alt="testing">
+              <img height="300px" width="30%" src="images/ada-lovelace-letter-to-charles-babbage-aug-15-a-v2.png" alt="testing">
+              <img height="300px" width="30%" src="images/babbage-letter-to-ada-lovelace-sept-9-v2.png" alt="testing">
+            </a>
+            <ul>
+              <li><span style="color:#42affa">Babbage:</span> "Enchantress of Number", I'm "Your faithful Slave"</li>
+              <li><span style="color:orange">Ada:</span> "You are brave man", I'm "High-Priestess of Babbage’s Engine"</li>
+              <li>Ada is CEO and Babbage is CTO then</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">Ada is gone</h3>
+            <ul>
+              <li>大量时间在养病和陪家人</li>
+              <li>比父亲多活了200多天</li>
+              <li>1852年11月27日去世</li>
+              <li>母亲和Babbage均未出席葬礼</li>
+              <li>死后传闻很多:婚外情,赌博欠债等</li>
+              <li>Babbage的研究再无进展</li>
+            </ul>
+            <img height="250px" style="margin-left:15px;margin-top:150px" src="images/ada-lovelace-obituary-v2.png" alt="testing">
+          </section>
+
+          <section>
+            <h1 data-fragment-index="1" style="color:#800080">Love Story?</h1>
+          </section>
+        </section>
+
+        <section>
+          <h1 style="color:#42affa">Q & A?</h1></br>
+          <h3>No, Thank You!</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../../revealjs341/lib/js/head.min.js"></script>
+    <script src="../../revealjs341/js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../../revealjs341/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../revealjs341/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../revealjs341/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../../revealjs341/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+  </body>
+</html>
