@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Thoughts&Rants After QCon</title>
+
+    <meta name="description" content="Microservices in Practice">
+    <meta name="author" content="Lenciel">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../revealjs341/css/reveal.css">
+    <link rel="stylesheet" href="../../revealjs341/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../custom_css/style.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../../revealjs341/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="../../revealjs341/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2 style="color:#42affa">我理解的全栈和微服务</h2>
+          <p>thoughts & rants after QCon2015</p>
+          <p>
+            <small>Created by <a href="mailto:lihao@testbird.com">Lenciel</a> @ <a href="http://www.testbird.com">TestBird</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">全栈是什么</h3>
+          <ul>
+            <li>"JS一统前后端开发就是全栈"</li>
+            <li>"说自己全栈的都是搞前端的"</li>
+            <li>"先扛30kg服务器上机架再说全栈"</li>
+            <li>"全栈? CPU和编译器都没整过吧"</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">在现如今在互联网行业做研发就好比...</h3>
+        </section>
+
+        <section data-background="images/damn_hard.png">
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">即使不算上搬机器和写编译器</h3>
+          <h3 style="color:#42affa">也是不可能<span style="color:orange">"全栈"</span>的</h3>
+
+          <ul>
+            <li>Karpov和Kasparov的业余爱好</li>
+            <li>技术栈本身从Web2.0到如今的变化</li>
+            <li>哪怕仅仅是<span style="color:greenyellow">前端...</span></li>
+          </ul>
+        </section>
+
+        <section data-background="images/frontend_tasks.png">
+        </section>
+
+        <section data-background="images/book_stack.png">
+          <p style="background:#000000">那么我们讨论全栈究竟是在<i style="font-size:80px;color:greenyellow">解决</i>什么问题?</p>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">全栈的缘起</h3>
+          <blockquote>
+            A full-stack web developer is someone who has honed skills in <span style="color:orangered">both front-end web design/development and back-end/server coding</span>.
+            You can count on a full-stack web developer to design, code, implement and maintain a fully functional modern interactive website <span style="color:orangered">on his/her own</span> (not just a static website with a few pages).
+          </blockquote>
+          <p>-- Carlos Bueno, <a href="http://facebook.com">Facebook</a></p>
+        </section>
+
+        <section>
+
+          <a href="#" class="image">
+          <img width="100%" src="images/not_silver_bullet.png" alt="wtf">
+          </a>
+          <blockquote style="color:#96D35F">
+            Hmmm...好样的...
+          </blockquote>
+
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">不断的修正</h3>
+          <blockquote>
+            It means a person who can work with databases, servers, systems engineering, and client work.
+            <span style="color:orangered">Depending on what kind of client is needed</span> that can mean a mobile stack, web stack, or native applications.
+            Basically when people are asking for a full-stack programmer they're looking for the all-singing, all-dancing technical wizard.
+            Or at least someone who won't complain too much when asked to <span style="color:orangered">do some work outside their normal comfort zone</span>.
+          </blockquote>
+          <p>--Ian Peters-Campbell on <a href="http://quora.com">Quora</a></p>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="color:#42affa">全栈实例:pdf生成服务</h3><br/>
+            <ul><span style="color:#42affa">需要：</span>
+            <li>了解各种PDF生成的方案的Pros&Cons</li>
+            <li>了解各种调用场景的需求</li>
+            <li>帮助其他人接入和使用服务</li><br/>
+            <span style="color:#42affa">不需要：</span>
+              <li>写很多代码</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈实例:apk文件上传和解析</h3><br/>
+            <ul>
+              <li>后端开发</li>
+              <li>前端开发</li>
+              <li>自动化测试</li>
+              <li>运维、监控和容量规划</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈实例:测试</h3>
+
+            <a href="#" class="image">
+              <img width="100%" src="images/testing.png" alt="testing">
+            </a>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈实例:运维</h3>
+            <a href="#" class="image">
+              <img height="400px" width="100%" src="images/devops.png" alt="testing">
+            </a>
+            <ul>
+              <li>Jenkins的build怎么挂了！</li>
+              <li>主页打不开了！</li>
+              <li>Confluence建不了空间了！</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈实例:需求</h3>
+            <ul>
+              <li><span style="color:#42affa">PO:</span> 我们服务器是不是要支持stream？</li>
+              <li><span style="color:orange">DEV:</span> 为什么需要?</li>
+              <li><span style="color:#42affa">PO:</span> 我们需要放音频和视频</li>
+              <li><span style="color:orange">DEV:</span> 在哪里有这个场景?</li>
+              <li><span style="color:#42affa">PO:</span> 玩家反馈要支持视频和音频的反馈</li>
+              <li><span style="color:orange">DEV:</span> 手机上?玩家能有多长时间的反馈？</li>
+              <li><span style="color:#42affa">PO:</span> 一般每个反馈几秒吧</li>
+              <li><span style="color:orange">DEV:</span> 那就直接下载文件到手机播放就是了</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈实例:系统</h3>
+            <h4 style="color:orange">兼容性测试平台</h4>
+            <ul>
+              <li>帮助用户接入</li>
+              <li>手机状态维护</li>
+              <li>测试用例录制回放技术</li>
+              <li>测试结果回传处理</li>
+              <li>运维和监控、容量规划</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h4 style="color:#E4EF65">那么如何与我们的工作结合?</h4>
+          <a href="#" class="image">
+            <img height="600px" src="images/fit_in_workflow.png" alt="testing">
+          </a>
+        </section>
+        <section>
+          <section>
+            <h3 style="color:#42affa">全栈要素:人</h3>
+            <a href="#" class="image">
+              <img height="300px" src="images/druid.jpg" alt="testing">
+            </a>
+            <ul>
+              <li>责任心：CDN式的工程师</li>
+              <li>求知欲：学习意愿</li>
+              <li>持续创新：不断优化现有流程和技术</li>
+              <li>理解业务：有大局观和洞察力的战术大师</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈要素:组织</h3>
+            <ul>
+              <li>康威定律</li>
+              <li>个人全栈还是团队全栈?</li>
+              <li>可持续的全栈</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1 data-fragment-index="1" style="color:#800080">康威定律?</h1>
+          </section>
+
+          <section data-background="images/convey_law.png">
+          </section>
+
+
+          <section>
+            <span style="color:#42affa">PDF报告又有新需求了!</span>
+            <a href="#" class="image">
+              <img height="300px" src="images/org_structure.png" alt="testing">
+            </a>
+            <ul>
+              <li><span style="color:#DB554A">设计要改:</span> 艳丽来做!</li>
+              <li><span style="color:#4EB9D9">后台要改:</span> 蔡旭来做!</li>
+              <li><span style="color:#DAAD42">前台要改:</span> 章伟来做!</li>
+              <li><span style="color:#3678D8">测试要测:</span> 媛媛来做!</li>
+              <li><span style="color:#C5366A">部署方式要改:</span> 谁来做?</li>
+            </ul>
+          </section>
+
+          <section data-background="images/one_role_only.png">
+            <h1 style="color:greenyellow">分身乏术，如何是好？</h1>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈要素: 微服务</h3>
+
+            <a href="#" class="image">
+              <img src="images/org_microservice.png" alt="testing">
+            </a>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">微服务是什么？</h3>
+
+            <a href="#" class="image">
+              <img src="images/martin_fowler.png" alt="testing">
+            </a>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">微服务如何做？</h3>
+            <ul>
+              <li><i style="font-size:60px;color:#ff0000">小</i>，且专注于一件事情</li>
+              <li><i style="font-size:60px;color:#ff0000">独</i>立进程中</li>
+              <li><i style="font-size:60px;color:#ff0000">轻</i>量级的通信机制</li>
+              <li><i style="font-size:60px;color:#ff0000">松</i>耦合，可独立测试和部署</li>
+            </ul>
+            <img height="250px" src="images/building_microservice.jpg" alt="testing">
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">微服务如何做？</h3>
+            <p>基于Bounded Context划分服务</p>
+            <img src="images/bounded_context.png" alt="testing">
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">微服务如何做？</h3>
+            <ul>
+              <li>选谁下手？Most painful but easily splits</li>
+              <li>以场景动作进行服务提取</li>
+              <li>围绕抽取出的服务建设团队</li>
+            </ul>
+          </section>
+
+          <section>
+
+            <a href="#" class="image">
+              <img width="100%" src="images/not_silver_bullet.png" alt="wtf">
+            </a>
+            <blockquote style="color:#96D35F">
+              Hmmm...好样的...
+            </blockquote>
+
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">微服务不是银弹</h3>
+            <ul>
+              <li>遵守康威定律</li>
+              <li>不是每个公司都是Netflix或者淘宝</li>
+              <li>文化先行：文化的建设比技术建设慢</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">Ask yourself first...</h3>
+            <ul>
+              <li>为啥不是一个Library?</li>
+              <li>到底有多少团队会使用这个服务?</li>
+              <li>谁来负责更新文档？通知服务使用方API变更？</li>
+              <li>谁来负责部署服务？谁来负责监控服务？</li>
+              <li style="font-size: 60px;color:#008000">Good Design is Imperfect Design</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈要素: 敏捷</h3>
+            <ul>
+              <li>代码的每个提交有充分review?</li>
+              <li>代码的每个提交有充分自测?</li>
+              <li>熄灯前所有的代码都已经提交?</li>
+            </ul>
+            <img height="250px" src="images/agile.png" alt="testing">
+
+          </section>
+
+          <section>
+            <h3 style="color:#42affa">全栈要素: DevOps</h3>
+            <ul>
+              <li>团队需要具备必要的测试和运维技能</li>
+              <li>DevOps需要工具来支撑，Tools not Solutions</li>
+              <li>增强沟通也是提高效率的重要组成部分</li>
+            </ul>
+            <img height="250px" src="images/continuous_delivery.jpg" alt="testing">
+
+          </section>
+        </section>
+
+        <section>
+          <h3 style="color:#42affa">总结</h3>
+          <ul>
+            <li>全栈其实主要是个人的<span style="color:greenyellow">意识形态</span>和组织的<span style="color:greenyellow">体系结构</span></li>
+            <li>沟通是至关重要的技能:记得<span style="color:red">Bounded Context</span></li>
+            <li>持续学习，实践敏捷和掌握工具：让<span style="color:#42affa">团队先全栈</span></li>
+            <li>全栈意味着个人愿意承担全部责任，从<span style="color:purple">CDN工程师</span>做起</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1 style="color:#42affa">Q & A?</h1></br>
+          <h3>Thank You!</h3>
+          <p style="color:#E4EF65">git@gitlab.testbird.io:lenciel/reveal-slides.git</p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../../revealjs341/lib/js/head.min.js"></script>
+    <script src="../../revealjs341/js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../../revealjs341/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../revealjs341/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../revealjs341/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../../revealjs341/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+
+  </body>
+</html>

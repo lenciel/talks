@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="cn">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Build better team with better process</title>
+
+    <meta name="description" content="Build better team with better process">
+    <meta name="author" content="Lenciel">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../revealjs341/css/reveal.css">
+    <link rel="stylesheet" href="../../revealjs341/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../custom_css/style.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../../revealjs341/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="../../revealjs341/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>研发流程交流</h2>
+          <p><a href="http://www.testbird.com">TestBird</a></p>
+          <p>
+            <small>2015/08/05 <a href="mailto:lihao@testbird.com">李昊</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h2 class="blue">CTO？研发总监？</h2>
+          <h4><a href="http://www.zhihu.com/question/31753374">问： 从大公司离职去小公司当 CTO 是一种怎样的体验?</a></h4>
+        </section>
+        <section>
+          <blockquote>
+            顶着昂贵的名头干着技术组长兼打杂的事情，
+            包括但不限于招聘，培训，鼓励程序猿。拉网线，
+            查机房，搜破解码，装系统，重装系统。讨论方案，
+            推翻方案，重新定方案，确定进度，拖延进度，重
+            新定进度，安抚程序员，安抚老板。
+            <span class="orange">工作内容一般不包括Coding。</span>
+          </blockquote>
+          <p>--最受欢迎答案</p>
+        </section>
+
+        <section>
+          <h2 class="blue">研发体系建设三要素</h2>
+          <a href="#" class="image">
+            <img width="70%" src="images/process_man_tech.png" alt="wtf">
+          </a>
+        </section>
+
+        <section>
+          <h3 class="blue">人：快速发展的研发团队</h3>
+          <ul>
+            <li>人数：2人 -> 40+人 </li>
+            <li>职责：开发 -> 开发、测试、DevOps...</li>
+            <li>梯队：从只有两头变成高中初三代</li>
+            <li>流程：从无到有，逐步完善</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 class="blue">人：快速发展的研发团队</h3>
+          <ul>
+            <li>推行全员全栈</li>
+            <li>实践微服务</li>
+            <li>分离业务团队和基础服务团队</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h3 class="blue">技术: Build/Test/Deployment</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_devops_build_etc.png" alt="wtf">
+            </a>
+          </section>
+          <section>
+            <h3 class="blue">技术: Monitoring/Service</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_devops_monitoring.png" alt="wtf">
+            </a>
+          </section>
+          <section>
+            <h3 class="blue">技术：Utilities</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_utilities.png" alt="wtf">
+            </a>
+          </section>
+
+          <section>
+            <h3 class="blue">技术:App Hosting</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_app_hosting.png" alt="wtf">
+            </a>
+          </section>
+
+          <section>
+            <h3 class="blue">技术:Language & Frameworks</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_languages.png" alt="wtf">
+            </a>
+          </section>
+
+
+          <section>
+            <h3 class="blue">技术:Assets & Media</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_assets.png" alt="wtf">
+            </a>
+          </section>
+
+
+          <section>
+            <h3 class="blue">技术:Data Stores</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_data_store.png" alt="wtf">
+            </a>
+          </section>
+
+
+          <section>
+            <h3 class="blue">技术:Libraries</h3>
+
+            <a href="#" class="image">
+              <img width="80%" src="images/tb_stack_libraries.png" alt="wtf">
+            </a>
+          </section>
+        </section>
+
+
+        <section>
+
+          <a href="#" class="image">
+            <img width="100%" src="images/overall_process.png" alt="wtf">
+          </a>
+          <blockquote style="color:#96D35F">
+            Hmmm...终于说到流程了...
+          </blockquote>
+        </section>
+
+        <section>
+          <h2 class="blue">不断修正，但目标清晰</h2>
+
+          <ul class="blue">
+            <li>任何一行代码都符合公司质量要求</li>
+            <li>一键编译运行任何项目</li>
+            <li>一键部署回退任何服务</li>
+            <li>员工从领机器到贡献第一行代码不超过一天</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="blue">代码是用来读的</h2>
+
+          <ul class="blue">
+            <li>统一，可读，易复用</li>
+            <li>One Project One Repo</li>
+            <li>CodeInsight</li>
+            <li>Code quality analysis</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="blue">开发环境</h2>
+
+          <ul class="blue">
+            <li>环境搭建一键操作: boxen/Vagrant/docker</li>
+            <li>编译一键操作: shell scripts/bazel</li>
+          </ul>
+
+          <p>统一的，自动化的开发环境带来：</p>
+          <ul class="blue">
+            <li>团队间的化学反应</li>
+            <li>知识复用和效率提升</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 class="blue">Code Review</h3><br/>
+          <ul><span class="blue">营造氛围：</span>
+            <li>基情只可以通过搞基获得</li>
+            <li>脑抽检测，人人需要</li>
+            <li>知识共享，统一风格</li><br/>
+            <span class="blue">严格禁止：</span>
+            <li>鄙视链：必须看完</li>
+            <li>走过场：不时抽查</li>
+            <li>不负责：任何改动都需要review，omment都需要处理</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 class="blue">Relax & Release</h3>
+          <a href="#" class="image">
+            <img width="100%" src="images/agile.png" alt="wtf">
+          </a>
+        </section>
+        <section>
+          <h3 class="blue">要长跑不要短跑</h3>
+          <ul>
+            <li class="blue">两周一次迭代</li>
+            <li class="greenyellow">先上Test，然后Staging，再上Production</li>
+            <li class="orange">关键功能灰度发布</li>
+            <li class="blue">所有的快跑都是短跑</li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="blue">尊重程序员的安静权</h3>
+          <a href="#" class="image">
+            <img width="60%" src="images/why_we_stay_late.png" alt="wtf">
+          </a>
+        </section>
+        <section>
+          <h3 class="blue">总结</h3>
+          <ul>
+            <li>技术和<span class="orange">沟通</span>都是至关重要的技能</li>
+            <li>持续学习和提升效率的组织氛围：让<span class="blue">团队先全栈</span></li>
+            <li>流程的基础是个人的<span style="color:greenyellow">意识形态</span>和组织的<span style="color:greenyellow">体系结构</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1 class="blue">Q & A?</h1></br>
+          <h3>Thank You!</h3>
+          <a href="#" class="image">
+            <img width="40%" src="images/final.png" alt="wtf">
+          </a>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../../revealjs341/lib/js/head.min.js"></script>
+    <script src="../../revealjs341/js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../../revealjs341/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../revealjs341/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../../revealjs341/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../revealjs341/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../../revealjs341/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+  </body>
+</html>
